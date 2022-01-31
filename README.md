@@ -7,6 +7,6 @@
  - Right Arrow turns clockwise
  - X Button moves the player forward
  
- To Do/Extensions:
+ My To Do/Extensions:
  - Framerate Independent Gameplay
  - Templatized Math Functions
