@@ -26,7 +26,7 @@
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Asteroid" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
+				<Option object_output="obj/Release/" /> 
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -47,7 +47,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="C:/Coding/Projects/Work in Progress/Libraries/SFML-sources-2.5.1/include" />
-			<Add directory="ImGui" />
 		</Compiler>
 		<Linker>
 			<Add directory="C:/Coding/Projects/Work in Progress/Libraries/SFML/lib" />
