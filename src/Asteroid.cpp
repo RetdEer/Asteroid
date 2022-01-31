@@ -43,7 +43,7 @@ Asteroid::Asteroid(const sf::Vector2u rwvp)
 
 void Asteroid::updateAsteroidData(const sf::Vector2u rwvp){
     sf::Rect<float> bnds(-_ao.getRadius(), -_ao.getRadius(), (float)rwvp.x + (2 * _ao.getRadius()), (float)rwvp.y + (2 * _ao.getRadius()));
-    if(!GenMath::isBoundedBy(_ao.getPosition(), bnds))         // if asteroid is no longer in the viewport,
+    if(!GenMath::isBoundedBy(_ao.getPosition(), bnds))         // if the asteroid is no longer in the viewport, flag it for deletion
         _inView = false;
     else{                                                      // else update internals and graphics
         _apos += _avel;
