@@ -7,7 +7,7 @@
 
 // Project #1: Asteroid Game
 
-constexpr int maxAsteroids = 16;                                     // you can increase this value for more of a challenge
+constexpr int maxAsteroids = 16;                                 // you can increase this value for more of a challenge
 int numAsteroids = 1, wavesSurvived = -1;                        // initial number of asteroids, number of waves survived
 
 bool checkCollisionBetweenShipAndAsteroid(const Ship& ship, const std::unique_ptr<Asteroid>& a);
@@ -16,7 +16,7 @@ int main(){
     sf::RenderWindow rw(sf::VideoMode(800.0f, 800.0f), "Asteroid", sf::Style::Titlebar | sf::Style::Close);
     Ship player(rw.getSize() / 2u);
 
-    srand(time(NULL));                                                       // Seeds the random number generator, important before calling rand()
+    srand(time(NULL));                                            // Seeds the random number generator, important before calling rand()
     std::vector<std::unique_ptr<Asteroid>> asteroids = {};
 
     while(rw.isOpen() && player.isStillAlive()){
@@ -34,16 +34,16 @@ int main(){
             player.updateShipData(rw.getSize(), 0.1f * GenMath::norm(normdVec));
         }
 
-        if(asteroids.empty()){                                               // if all the asteroids have despawned, spawn some more!
+        if(asteroids.empty()){                                 // if all the asteroids have despawned, spawn some more!
             for(int i = 0; i < numAsteroids; ++i)
                 asteroids.push_back(std::make_unique<Asteroid>(rw.getSize()));
 
             numAsteroids = (numAsteroids >= maxAsteroids ? maxAsteroids : (numAsteroids + 1));
             wavesSurvived += 1;
         }
-        else{                                                                        // otherwise update all remaining asteroids
+        else{                                                  // otherwise update all remaining asteroids
             for(auto& a : asteroids)
-                a->updateAsteroidData(rw.getSize());                // remove then erase out of bound asteroid(s)
+                a->updateAsteroidData(rw.getSize());           // remove then erase out of bound asteroid(s)
 
             asteroids.erase(std::remove_if(asteroids.begin(), asteroids.end(),
                                     [](const std::unique_ptr<Asteroid>& a){return !a->isInView();}),
@@ -66,7 +66,7 @@ int main(){
             std::cout << "You survived " << wavesSurvived << " wave(s)!\n";
         }
 
-        rw.clear();                                                                    // clear the screen, draw new frame, then display it
+        rw.clear();                                                                 // clear the screen, draw new frame, then display it
         rw.draw(player.getSo());
         for(const auto& a : asteroids) rw.draw(a->getAo());
         rw.display();
