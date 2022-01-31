@@ -1,6 +1,6 @@
 #include "GenMath.h"
 
-float GenMath::mag(const sf::Vector2f v){                                          // magnitude of a vector
+float GenMath::mag(const sf::Vector2f v){                               // magnitude of a vector
     return std::sqrt(v.x * v.x + v.y * v.y);
 }
 
@@ -8,15 +8,15 @@ float GenMath::dot(const sf::Vector2f v1, const sf::Vector2f v2){       // dot p
     return v1.x * v2.x + v1.y * v2.y;
 }
 
-sf::Vector2f GenMath::perp(const sf::Vector2f v){                               // perpendicular vector between two points
+sf::Vector2f GenMath::perp(const sf::Vector2f v){                        // perpendicular vector between two points
     return {-v.y, v.x};
 }
 
-sf::Vector2f GenMath::norm(const sf::Vector2f v){                              // normalizes a vector given its two endpoints
+sf::Vector2f GenMath::norm(const sf::Vector2f v){                        // normalizes a vector given its two endpoints
     return {v.x / mag(v), v.y / mag(v)};
 }
 
-int GenMath::genNumInRange(const int minInt, const int maxInt){     // returns random number in range minInt -> maxInt inclusive
+int GenMath::genNumInRange(const int minInt, const int maxInt){          // returns random number in range minInt -> maxInt inclusive
     return minInt + (std::rand() % (maxInt - minInt + 1));
 }
 
