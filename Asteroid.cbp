@@ -47,6 +47,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="C:/Coding/Projects/Work in Progress/Libraries/SFML-sources-2.5.1/include" />
+			<Add directory="ImGui" />
 		</Compiler>
 		<Linker>
 			<Add directory="C:/Coding/Projects/Work in Progress/Libraries/SFML/lib" />
